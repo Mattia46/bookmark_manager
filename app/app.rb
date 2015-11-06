@@ -5,6 +5,7 @@ require './app/data_mapper_setup.rb'
 require_relative 'models/link'
 
 class BookmarkManager < Sinatra::Base
+  set :views, proc {File.join(root, '..', 'views')}
   get '/' do
     erb(:index)
   end
