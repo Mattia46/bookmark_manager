@@ -1,12 +1,16 @@
-# A sample Gemfile
 source "https://rubygems.org"
+ruby '2.2.3'
 
+gem 'sinatra'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'pry'
-gem 'rspec'
-gem 'capybara'
-gem 'sinatra'
-gem 'rspec-sinatra'
-gem 'tree'
-gem 'database_cleaner'
+gem 'puma'
+gem 'rake'
+gem 'bcrypt'
+
+group :test do
+  gem 'capybara'
+  gem 'rspec'
+  gem 'database_cleaner'
+  gem 'rubocop'
+end

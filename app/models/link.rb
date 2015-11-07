@@ -1,10 +1,11 @@
-require './app/models/data_mapper_setup'
+require 'data_mapper'
+
 class Link
   include DataMapper::Resource
+
   property :id, Serial
-  property :url, String
   property :title, String
-  property :tag, String
+  property :url, String
 
   has n, :tags, :through => Resource
 end

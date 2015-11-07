@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
+    ast (2.1.0)
+    astrolabe (1.3.1)
+      parser (~> 2.2)
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
@@ -11,7 +14,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    coderay (1.1.0)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -62,26 +64,25 @@ GEM
       dm-core (~> 1.2.0)
     do_postgres (0.10.16)
       data_objects (= 0.10.16)
-    extlib (0.9.16)
     fastercsv (1.5.5)
-    highline (1.7.8)
     json (1.8.3)
     json_pure (1.8.3)
-    method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    pry (0.10.3)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
+    parser (2.2.3.0)
+      ast (>= 1.1, < 3.0)
+    powerpack (0.1.1)
+    puma (2.14.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rainbow (2.0.0)
+    rake (10.4.2)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -94,21 +95,20 @@ GEM
     rspec-mocks (3.3.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
-    rspec-sinatra (0.1.2)
-      templater (>= 1.0.0)
     rspec-support (3.3.0)
+    rubocop (0.34.2)
+      astrolabe (~> 1.3)
+      parser (>= 2.2.2.5, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.4)
+    ruby-progressbar (1.7.5)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
-    slop (3.6.0)
     stringex (1.5.1)
-    templater (1.0.0)
-      diff-lcs (>= 1.1.2)
-      extlib (>= 0.9.5)
-      highline (>= 1.4.0)
     tilt (2.0.1)
-    tree (0.2.1)
     uuidtools (2.1.5)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -117,12 +117,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   capybara
   data_mapper
   database_cleaner
   dm-postgres-adapter
-  pry
+  puma
+  rake
   rspec
-  rspec-sinatra
+  rubocop
   sinatra
-  tree
+
+BUNDLED WITH
+   1.10.6
