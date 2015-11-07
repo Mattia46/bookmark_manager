@@ -7,7 +7,6 @@ require 'database_cleaner'
 
 require './app/data_mapper_setup.rb'
 require './app/app.rb'
-require './app/models/link'
 
 Capybara.app = BookmarkManager
 

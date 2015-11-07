@@ -9,4 +9,3 @@ class Link
 
   has n, :tags, :through => Resource
 end
-
